@@ -21,13 +21,15 @@
 
         <!-- <config-file parent="/*" target="AndroidManifest.xml"> -->
           <!-- TESTING BACKGROUND SERVICE -->
-        <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">
+        <edit-config file="AndroidManifest.xml" target="/manifest/application/service" mode="merge">
           <service
             android:exported="true"
             android:name="cordova.plugin.hello.world.SensorService"
             android:permission="android.permission.BIND_JOB_SERVICE"
             android:enabled="true" />
+        </edit-config>
 
+        <edit-config file="AndroidManifest.xml" target="/manifest/application/reciever" mode="merge">
           <reciever
             android:name="cordova.plugin.hello.world.SensorRestarterBroadcastReceiver"
             android:enabled="true"
