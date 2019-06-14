@@ -12,7 +12,27 @@
                 <param name="android-package" value="cordova.plugin.hello.world.HelloWorld" />
             </feature>
         </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+          <!-- TESTING BACKGROUND SERVICE -->
+          <service
+            android:name="cordova.plugin.hello.world.SensorService"
+            android:enabled="true">
+          </service>
+          <reciever
+            android:name="cordova.plugin.hello.world.SensorRestarterBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:label="RestartServiceWhenStopped">
+            <intent-filter>
+              <action android:name="${applicationId}.event.BACKGROUNDED" />
+            </intent-filter>
+          </reciever>
+          <!-- Testing ends -->
+        </config-file>
         <source-file src="src/android/HelloWorld.java" target-dir="src/cordova/plugin/hello/world/HelloWorld" />
+        <!-- Testing background -->
+        <source-file src="src/android/SensorService.java" target-dir="src/cordova/plugin/hello/world/HelloWorld" />
+        <source-file src="src/android/SensorRestarterBroadcastReceiver.java" target-dir="src/cordova/plugin/hello/world/HelloWorld" />
+        <!-- Testing background ends -->
     </platform>
 </plugin>
