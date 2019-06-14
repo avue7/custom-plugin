@@ -21,7 +21,7 @@
 
         <!-- <config-file parent="/*" target="AndroidManifest.xml"> -->
           <!-- TESTING BACKGROUND SERVICE -->
-        <edit-config file="AndroidManifest" target="/manifest/application" mode="merge">
+        <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">
           <service
             android:exported="true"
             android:name="cordova.plugin.hello.world.SensorService"
