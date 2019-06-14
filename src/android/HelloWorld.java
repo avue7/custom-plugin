@@ -12,7 +12,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+// import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 /**
  * This class echoes a string called from JavaScript.
@@ -20,7 +20,6 @@ import android.util.Log;
 public class HelloWorld extends CordovaPlugin {
 // public class HelloWorld extends AppCompatActivity {
 // public class HelloWorld {
-
 
   Intent mServiceIntent;
   private SensorService mSensorService;
@@ -31,6 +30,19 @@ public class HelloWorld extends CordovaPlugin {
   }
 
   @Override
+  public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+      if (action.equals("coolMethod")) {
+          String message = args.getString(0);
+          this.coolMethod(message, callbackContext);
+          return true;
+      } else if (action.equals("onCreate")){
+          this.onCreate();
+          return true;
+      }
+      return false;
+  }
+
+  // @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     ctx = this;
