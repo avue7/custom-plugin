@@ -21,6 +21,10 @@
 
         <!-- <config-file parent="/*" target="AndroidManifest.xml"> -->
           <!-- TESTING BACKGROUND SERVICE -->
+          <edit-config file="AndroidManifest.xml" target="/manifest" mode="merge">
+            <application android:allowBackup="true">
+          </edit-config>
+          
         <config-file target="AndroidManifest.xml" parent="/manifest/application" mode="merge">
           <service
             android:exported="true"
