@@ -12,14 +12,14 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-// import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 /**
  * This class echoes a string called from JavaScript.
  */
 // public class HelloWorld extends CordovaPlugin {
-// public class HelloWorld extends AppCompatActivity {
-public class HelloWorld {
+public class HelloWorld extends AppCompatActivity {
+// public class HelloWorld {
 
 
   Intent mServiceIntent;
