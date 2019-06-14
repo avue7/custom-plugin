@@ -19,8 +19,9 @@
             </feature>
         </config-file>
 
-        <config-file parent="/*" target="AndroidManifest.xml">
+        <!-- <config-file parent="/*" target="AndroidManifest.xml"> -->
           <!-- TESTING BACKGROUND SERVICE -->
+        <edit-config file="AndroidManifest" target="/manifest/application" mode="merge">
           <service
             android:exported="true"
             android:name="cordova.plugin.hello.world.SensorService"
@@ -36,8 +37,9 @@
               <action android:name="${applicationId}.event.BACKGROUNDED" />
             </intent-filter>
           </reciever>
+        </edit-config>
           <!-- Testing ends -->
-        </config-file>
+        <!-- </config-file> -->
 
         <source-file src="src/android/HelloWorld.java" target-dir="src/cordova/plugin/hello/world/HelloWorld" />
 
