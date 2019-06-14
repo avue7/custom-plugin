@@ -17,7 +17,9 @@ import android.util.Log;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class HelloWorld extends CordovaPlugin {
+// public class HelloWorld extends CordovaPlugin {
+public class HelloWorld extends AppCompatActivity {
+
 
   Intent mServiceIntent;
   private SensorService mSensorService;
